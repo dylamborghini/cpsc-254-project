@@ -1,0 +1,158 @@
+{
+    "Budget": {
+      "definition": "A plan for managing income and expenses over a specific period of time.",
+      "aliases": ["budgeting", "money management", "financial plan"],
+      "student_context": "For students, a budget helps you track limited income from part-time jobs, financial aid, or family support against expenses like tuition, books, housing, and food.",
+      "how_to": "1. Track all income sources (part-time work, financial aid, support from family)\n2. List all expenses and categorize them (fixed vs. variable)\n3. Calculate the difference between income and expenses\n4. Adjust spending if expenses exceed income\n5. Review and update your budget regularly",
+      "student_advice": "As a student, try the 50-30-20 rule: 50% for needs (housing, food), 30% for wants (entertainment), and 20% for savings or debt repayment. Adjust these percentages based on your specific situation.",
+      "formula": "Total Income - Total Expenses = Net Cash Flow"
+    },
+    
+    "Credit Score": {
+      "definition": "A numerical representation of your creditworthiness based on your credit history.",
+      "aliases": ["FICO score", "credit rating"],
+      "student_context": "Building good credit during college helps with renting apartments, getting better rates on car loans, and sometimes even with job applications after graduation.",
+      "how_to": "1. Apply for a student credit card with low limits\n2. Always pay bills on time\n3. Keep balances low, ideally below 30% of your credit limit\n4. Don't open too many new accounts at once\n5. Monitor your credit report for errors",
+      "student_advice": "Start building credit early with a secured or student credit card. Use it for small purchases that you can pay off in full each month. This establishes good habits and builds your credit history."
+    },
+    
+    "Student Loan": {
+      "definition": "Money borrowed to pay for college or university education that must be repaid with interest.",
+      "aliases": ["education loan", "college loan", "financial aid"],
+      "student_context": "Federal student loans typically offer better interest rates and repayment options than private loans. They also don't require credit checks or cosigners for undergraduates.",
+      "how_to": "1. Complete the FAFSA to apply for federal loans\n2. Accept only the amount you need\n3. Understand the terms of your loan (interest rate, repayment plans)\n4. Explore loan forgiveness programs for your field\n5. Consider income-driven repayment plans after graduation",
+      "student_advice": "Borrow only what you need for educational expenses, not for lifestyle costs. Each dollar you borrow will cost more to repay due to interest. Federal loans generally have better terms than private loans.",
+      "comparison": {
+        "Scholarship": "Student loans must be repaid with interest, while scholarships are essentially free money that doesn't need to be repaid."
+      }
+    },
+    
+    "Scholarship": {
+      "definition": "Financial aid awarded to students based on academic achievements, talents, or other criteria that doesn't need to be repaid.",
+      "aliases": ["grant", "academic award", "financial aid"],
+      "student_context": "Scholarships can significantly reduce your educational costs and need for loans. They're available from schools, private organizations, employers, and government agencies.",
+      "how_to": "1. Start searching early (even in high school)\n2. Check with your school's financial aid office\n3. Use scholarship search engines\n4. Apply for multiple scholarships, even smaller ones\n5. Pay attention to deadlines and requirements",
+      "student_advice": "Apply for as many scholarships as possible, even smaller ones that might be less competitive. Many scholarships go unclaimed each year because students don't apply."
+    },
+    
+    "Interest Rate": {
+      "definition": "The percentage of a loan amount or deposit that is charged or earned as interest, typically expressed as an annual percentage.",
+      "aliases": ["APR", "annual percentage rate", "APY"],
+      "student_context": "For student loans, interest rates determine how much extra you'll pay beyond the original amount borrowed. For savings accounts, interest rates determine how much your money will grow.",
+      "how_to": "1. Compare interest rates when choosing loans or credit cards\n2. For student loans, look for subsidized federal loans first\n3. For savings, seek accounts with higher APY\n4. Understand whether rates are fixed or variable\n5. Calculate the long-term impact of different rates",
+      "student_advice": "Even small differences in interest rates can have a big impact over time. For example, a 1% difference on a $20,000 loan over 10 years can mean paying about $1,000 more in interest.",
+      "formula": "Simple Interest: Interest = Principal × Rate × Time\nCompound Interest: A = P(1 + r/n)^(nt)",
+      "calculation_example": "Example: On a $10,000 student loan with 5% annual interest for 10 years, you would pay approximately $2,728 in interest."
+    },
+    
+    "Emergency Fund": {
+      "definition": "Money set aside specifically for unexpected expenses or financial emergencies.",
+      "aliases": ["rainy day fund", "safety net"],
+      "student_context": "For students, even a small emergency fund of $500-1000 can help cover unexpected costs like car repairs, medical expenses, or sudden trips home.",
+      "how_to": "1. Start small with a goal of saving $500\n2. Set up automatic transfers to a separate savings account\n3. Add any windfalls (tax refunds, gift money)\n4. Gradually build to 3-6 months of essential expenses\n5. Only use for true emergencies",
+      "student_advice": "Even on a tight student budget, try to set aside a small amount each month. Having even $500 saved can prevent you from going into credit card debt when emergencies arise."
+    },
+    
+    "Compound Interest": {
+      "definition": "Interest calculated on both the initial principal and the accumulated interest from previous periods.",
+      "aliases": ["interest on interest"],
+      "student_context": "Compound interest works against you with debt (making it grow faster) but works for you with savings and investments (helping your money grow faster).",
+      "how_to": "1. Start saving or investing as early as possible\n2. Choose accounts with higher interest rates\n3. Leave your money invested to maximize growth\n4. Reinvest any earnings or dividends\n5. Consider the frequency of compounding (daily, monthly, annually)",
+      "student_advice": "Start saving early, even small amounts. Thanks to compound interest, $100 invested monthly from age 20 could grow to much more than $200 invested monthly starting at age 30.",
+      "formula": "A = P(1 + r/n)^(nt)\nWhere:\nA = final amount\nP = principal (initial investment)\nr = annual interest rate\nn = compounding frequency per year\nt = time in years",
+      "calculation_example": "Example: $1,000 invested at 5% compounded annually would grow to $1,276 after 5 years."
+    },
+    
+    "Credit Card": {
+      "definition": "A payment card that allows the cardholder to borrow funds to pay for goods and services, with the obligation to repay the funds plus interest.",
+      "aliases": ["card", "plastic"],
+      "student_context": "For students, credit cards can help build credit history, but they also present the risk of accumulating debt that's difficult to repay on a student budget.",
+      "how_to": "1. Choose a student card with no annual fee\n2. Use it only for planned purchases\n3. Pay the full balance every month\n4. Set up automatic payments\n5. Monitor your statements regularly",
+      "student_advice": "Always pay your credit card bill in full and on time each month. The interest rates on credit cards (often 15-25%) are much higher than on student loans, making this an expensive way to borrow."
+    },
+    
+    "FAFSA": {
+      "definition": "The Free Application for Federal Student Aid, which is used to determine eligibility for federal financial aid including grants, work-study, and loans.",
+      "aliases": ["financial aid application", "federal student aid"],
+      "student_context": "Completing the FAFSA is essential for accessing most types of financial aid, including many scholarships and grants that don't need to be repaid.",
+      "how_to": "1. Create an FSA ID at studentaid.gov\n2. Gather tax returns, bank statements, and other financial documents\n3. Complete the application online as early as possible after October 1\n4. List all schools you're considering\n5. Renew your FAFSA each year",
+      "student_advice": "Submit your FAFSA as early as possible after it opens on October 1 each year. Some aid is first-come, first-served, and early applicants often receive more favorable aid packages."
+    },
+    
+    "Rent": {
+      "definition": "Regular payment made by a tenant to a landlord for the use of property or land.",
+      "aliases": ["housing cost", "lease payment"],
+      "student_context": "Housing is typically the largest expense in a student budget, often accounting for 30-50% of monthly spending.",
+      "how_to": "1. Determine your maximum affordable rent (ideally no more than 30% of income)\n2. Factor in all costs (utilities, internet, parking)\n3. Compare on-campus vs. off-campus options\n4. Consider sharing with roommates to reduce costs\n5. Read leases carefully before signing",
+      "student_advice": "Living with roommates can significantly reduce your housing costs. Each additional roommate can cut your rent and utility costs substantially.",
+      "calculation_example": "Example: If your monthly income is $1,200, aim to keep rent and utilities below $400 (33% of income)."
+    },
+    
+    "Work-Study": {
+      "definition": "A federal financial aid program that provides part-time employment for students with financial need.",
+      "aliases": ["campus job", "student employment"],
+      "student_context": "Work-study jobs are often on-campus, have flexible hours that work with class schedules, and sometimes allow for study time during slower periods.",
+      "how_to": "1. Indicate interest in work-study on your FAFSA\n2. Check your financial aid award letter for eligibility\n3. Apply for positions through your school's job board\n4. Balance work hours with your academic schedule\n5. Typically limited to 10-20 hours per week",
+      "student_advice": "Work-study earnings don't count against your financial aid eligibility for the following year, unlike regular job income. This makes it a particularly valuable form of financial assistance."
+    },
+    
+    "Meal Plan": {
+      "definition": "A pre-paid plan offered by colleges that provides students with a specified number of meals or dining dollars.",
+      "aliases": ["dining plan", "food plan"],
+      "student_context": "Meal plans offer convenience but may not always be the most cost-effective option compared to grocery shopping and cooking.",
+      "how_to": "1. Calculate the per-meal cost of different plan options\n2. Consider your eating habits and schedule\n3. Factor in flexibility needs and dining location preferences\n4. Compare with grocery budget alternatives\n5. Consider declining balance or partial meal plans if available",
+      "student_advice": "Track how many meals you actually use in your plan. Many students find they don't use all their meal swipes, making the effective cost per meal much higher than anticipated.",
+      "calculation_example": "Example: A $2,000 semester meal plan with 200 meals equals $10 per meal. Compare this to your average grocery or restaurant spending to determine value."
+    },
+    
+    "Financial Aid": {
+      "definition": "Money provided to students to help pay for education expenses, including grants, loans, work-study, and scholarships.",
+      "aliases": ["student aid", "tuition assistance"],
+      "student_context": "Financial aid can come from federal and state governments, colleges, and private organizations. It can significantly reduce your out-of-pocket education costs.",
+      "how_to": "1. Complete the FAFSA to apply for federal aid\n2. Research and apply for institutional aid from your college\n3. Seek out private scholarships and grants\n4. Understand the terms of all aid offered\n5. Accept grants and scholarships first, then work-study, then loans",
+      "student_advice": "Always know what type of aid you're receiving. Grants and scholarships don't need to be repaid, but loans do. Read all the fine print before accepting any aid.",
+      "comparison": {
+        "Student Loan": "Financial aid is a broad category that includes loans, while student loans specifically are borrowed money that must be repaid with interest."
+      }
+    },
+    
+    "Savings Account": {
+      "definition": "A bank account that pays interest on deposited funds and typically limits withdrawals.",
+      "aliases": ["deposit account", "savings"],
+      "student_context": "A savings account is a safe place to keep your emergency fund and money for short-term goals, while earning a small amount of interest.",
+      "how_to": "1. Compare interest rates and fees at different banks and credit unions\n2. Look for accounts with no minimum balance requirements\n3. Set up automatic transfers from checking to savings\n4. Use online banks for potentially higher interest rates\n5. Keep savings separate from everyday spending money",
+      "student_advice": "Consider a high-yield savings account from an online bank, which often offers higher interest rates than traditional banks. Make sure it's FDIC-insured for safety."
+    },
+    
+    "Checking Account": {
+      "definition": "A bank account that allows for frequent deposits and withdrawals, typically through checks, debit cards, and electronic transfers.",
+      "aliases": ["current account", "transaction account"],
+      "student_context": "A checking account is essential for managing day-to-day finances, paying bills, and receiving direct deposits.",
+      "how_to": "1. Research student checking accounts with no monthly fees\n2. Compare ATM access and fees\n3. Set up direct deposit if you have income\n4. Use mobile banking apps to track transactions\n5. Monitor your balance to avoid overdraft fees",
+      "student_advice": "Many banks offer student checking accounts with no monthly maintenance fees. Look for one with convenient ATM locations on or near campus to avoid out-of-network ATM fees."
+    },
+    
+    "Debt": {
+      "definition": "Money owed by one party (the borrower) to another party (the lender), typically with an agreement to pay it back with interest.",
+      "aliases": ["loans", "liabilities", "borrowed money"],
+      "student_context": "Student debt primarily comes from student loans, but can also include credit card debt. Managing debt responsibly during college sets you up for financial success after graduation.",
+      "how_to": "1. Borrow only what you need, not what you're offered\n2. Understand the terms of all debt (interest rates, repayment periods)\n3. Pay high-interest debt first (usually credit cards)\n4. Make payments on time to avoid fees and credit score damage\n5. Consider consolidation if you have multiple loans",
+      "student_advice": "Differentiate between 'good debt' (education loans that increase your earning potential) and 'bad debt' (high-interest consumer debt for non-essential items). Minimize the latter."
+    },
+    
+    "Credit Report": {
+      "definition": "A detailed record of a person's credit history, including payment history, credit accounts, and public records like bankruptcies.",
+      "aliases": ["credit history", "credit file"],
+      "student_context": "Your credit report affects your ability to rent apartments, get jobs, and qualify for loans. Building a positive credit history during college benefits you after graduation.",
+      "how_to": "1. Get your free credit report annually from annualcreditreport.com\n2. Check for errors and dispute any inaccuracies\n3. Monitor your credit reports regularly\n4. Understand what factors affect your credit score\n5. Protect your personal information to prevent identity theft",
+      "student_advice": "You're entitled to one free credit report per year from each of the three major credit bureaus. Stagger your requests (one every four months) to monitor your credit throughout the year."
+    },
+    
+    "Income Tax": {
+      "definition": "A tax levied by governments on income generated by businesses and individuals within their jurisdiction.",
+      "aliases": ["tax return", "federal tax"],
+      "student_context": "As a student, you may qualify for education tax credits and deductions that can reduce your tax bill or increase your refund.",
+      "how_to": "1. Determine if you need to file a tax return based on income\n2. Gather necessary documents (W-2s, 1098-T for tuition)\n3. Determine if you're a dependent on your parents' return\n4. Check eligibility for education credits (American Opportunity, Lifetime Learning)\n5. File by the deadline (typically April 15)",
+      "student_advice": "Use free tax filing resources for students, such as IRS Free File or Volunteer Income Tax Assistance (VITA) programs on many campuses."
+    }
+  }
