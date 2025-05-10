@@ -1,7 +1,16 @@
 """
 Budget management service for the Financial Literacy Coach
 """
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from datetime import datetime
+from src.db.database import get_db_connection
+from src.config import BUDGET_THRESHOLDS, EXPENSE_CATEGORIES
 from src.db.models import Budget
+import os, json
+from src.config import BASE_DIR
+from src.ui.display import clear_screen, display_success, display_error
+
 from src.ui.display import (
     clear_screen,
     display_title,
@@ -18,7 +27,6 @@ from src.ui.prompts import (
     prompt_for_selection,
     prompt_for_confirmation
 )
-from src.config import BUDGET_THRESHOLDS, EXPENSE_CATEGORIES
 
 def budget_menu(user_id):
     """
@@ -100,6 +108,59 @@ def create_update_budget(user_id):
         display_error(f"Error saving budget: {str(e)}")
     
     input("\nPress Enter to continue...")
+    
+def record_new_budget(user_id):
+    """
+    Record a new budget entry (preserves history for forecasting).
+    """
+    from src.db.models import Budget
+    from src.ui.display import clear_screen, display_title, display_budget_summary, display_success, display_error
+    from src.ui.prompts import prompt_for_budget_income, prompt_for_budget_savings, prompt_for_budget_expenses
+    from src.services.budget import analyze_budget, display_budget_recommendations
+
+    clear_screen()
+    display_title("RECORD NEW BUDGET ENTRY")
+    display_info("This will save a completely new budget entry (won't overwrite your old one).")
+
+    # Income
+    total_income, income_sources = prompt_for_budget_income()
+    if total_income is None:
+        return
+
+    # Savings
+    savings = prompt_for_budget_savings()
+    if savings is None:
+        return
+
+    # Expenses
+    expenses = prompt_for_budget_expenses()
+    if expenses is None:
+        return
+
+    # Insert new budget
+    try:
+        budget = Budget(
+            user_id=user_id,
+            income=total_income,
+            savings=savings,
+            expenses=expenses,
+            income_sources=income_sources
+        )
+        budget.save()
+
+        clear_screen()
+        display_success("New budget entry saved successfully!")
+        display_budget_summary(budget)
+
+        # Recommendations
+        analysis = analyze_budget(budget)
+        display_budget_recommendations(analysis)
+
+    except Exception as e:
+        display_error(f"Error saving new budget: {e}")
+
+    input("\nPress Enter to continue...")
+
 
 def view_budget_summary(user_id):
     """
@@ -496,3 +557,88 @@ def map_to_general_category(category):
     }
     
     return category_mapping.get(category, "Other")
+
+def forecast_spending(user_id):
+    """
+    Forecast next month's total expenses.
+    
+    If at least two historical budgets exist, fit a simple linear trend.
+    Otherwise, return last month's total expenses as the forecast.
+    """
+    from src.db.database import get_db_connection
+    from datetime import datetime
+    import numpy as np
+    from sklearn.linear_model import LinearRegression
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT b.created_at AS date,
+               COALESCE(SUM(e.amount), 0) AS total_expenses
+        FROM budgets b
+        LEFT JOIN expenses e ON e.budget_id = b.id
+        WHERE b.user_id = ?
+        GROUP BY b.id
+        ORDER BY b.created_at
+    """, (user_id,))
+    rows = cursor.fetchall()
+    conn.close()
+
+    if not rows:
+        # No budgets at all
+        return None
+
+    # Compute total expenses for the latest entry
+    last_total = rows[-1]["total_expenses"]
+
+    if len(rows) < 2:
+        # Only one month—just repeat last month's total
+        return last_total
+
+    # Otherwise fit a simple trend:
+    x, y = [], []
+    for row in rows:
+        dt = datetime.fromisoformat(row["date"])
+        # Convert to a single number (e.g. year*12 + month)
+        x.append([dt.year * 12 + dt.month])
+        y.append(row["total_expenses"])
+
+    X = np.array(x)
+    Y = np.array(y)
+
+    model = LinearRegression().fit(X, Y)
+    next_period = np.array([[X[-1, 0] + 1]])
+    return model.predict(next_period)[0]
+
+def export_budget(user_id):
+    """
+    Export the latest budget to a JSON file under <project_root>/exports/.
+    """
+    budget = Budget.get_latest_by_user_id(user_id)
+    clear_screen()
+
+    if not budget:
+        display_error("You don't have a budget yet. Nothing to export.")
+        input("\nPress Enter to continue...")
+        return
+
+    data = {
+        "income": budget.income,
+        "savings": budget.savings,
+        "income_sources": budget.income_sources,
+        "expenses": budget.expenses,
+        "created_at": budget.id  # you can add more fields if you like
+    }
+
+    export_dir = os.path.join(BASE_DIR, "exports")
+    os.makedirs(export_dir, exist_ok=True)
+    path = os.path.join(export_dir, f"budget_{user_id}.json")
+
+    try:
+        with open(path, "w") as f:
+            json.dump(data, f, indent=2)
+        display_success(f"Budget exported to {path}")
+    except Exception as e:
+        display_error(f"Failed to export budget: {e}")
+
+    input("\nPress Enter to continue...")

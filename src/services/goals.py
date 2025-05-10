@@ -266,3 +266,41 @@ def display_goal_achievement(goal_title):
     print("• Celebrate your achievement (in a budget-friendly way)")
     print("• Set a new goal to maintain your financial momentum")
     print("• Consider increasing your emergency fund or retirement savings")
+
+def delete_goal(user_id):
+    """
+    Delete a financial goal.
+    """
+    goals = Goal.get_all_by_user_id(user_id)
+    clear_screen()
+    display_title("DELETE FINANCIAL GOAL")
+
+    if not goals:
+        display_error("You don't have any goals to delete.")
+        input("\nPress Enter to continue...")
+        return
+
+    options = [
+        f"{g.title} — ${g.current_amount:.2f}/${g.target_amount:.2f}"
+        for g in goals
+    ]
+    selected = prompt_for_selection("Select a goal to delete", options)
+    if selected is None:
+        return
+
+    goal = goals[options.index(selected)]
+    confirm = prompt_for_confirmation(
+        f"Are you sure you want to delete '{goal.title}'?",
+        default='n'
+    )
+    if not confirm:
+        return
+
+    try:
+        goal.delete()
+        clear_screen()
+        display_success(f"Goal '{goal.title}' deleted successfully!")
+    except Exception as e:
+        display_error(f"Error deleting goal: {e}")
+
+    input("\nPress Enter to continue...")
